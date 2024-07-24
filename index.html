@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Swapy Example</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-row">
+  <div class="containera">
+    <div class="" data-swapy-slot="foo">
+      <div class="p-2 border-2 border-black" data-swapy-item="a">
+        Fake Title 1
+      </div>
+    </div>
+    <div class="" data-swapy-slot="bar">
+      <div class="p-2 border-2 border-black" data-swapy-item="b">
+        Fake Title 2
+        <div class="handle" data-swapy-handle></div>
+      </div>
+    </div>
+    <div class="" data-swapy-slot="baz">
+      <div class="p-2 border-2 border-black" data-swapy-item="c">
+        Fake Title 3
+      </div>
+    </div>
+    <div class="" data-swapy-slot="slot1">
+      <div class="p-2 border-2 border-black" data-swapy-item="item1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </div>
+    </div>
+    <div class="" data-swapy-slot="slot2">
+      <div class="p-2 border-2 border-black" data-swapy-item="item2">
+        Lorem ipsum dolor sit amet.
+      </div>
+    </div>
+    <div class="" data-swapy-slot="slot3">
+      <div class="p-2 border-2 border-black" data-swapy-item="item3">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, recusandae eaque.
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/swapy/dist/swapy.min.js"></script>
+  <script>
+    const container3 = document.querySelector('.containera')
+    const enableInput = document.querySelector('#enable')
+
+    const swapy = Swapy.createSwapy(container3, {
+      animation: 'spring'
+    })
+    swapy.onSwap((event) => {
+      console.log('swapy2 event', event.data)
+    })
+
+    // swapy.onSwap((event) => {
+    //   console.log('event.map', event.data.map)
+    //   console.log('event.object', event.data.object)
+    //   console.log('event.array', event.data.array)
+    // })
+
+  </script>
+</body>
+
+</html>
